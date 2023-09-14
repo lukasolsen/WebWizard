@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "@parcel/config-default",
+    "@parcel/config-webextension"
+  ],
+  "transforms": {
+    "*.ts": "@parcel/transformer-typescript",
+    "*.tsx": "@parcel/transformer-typescript",
+    "*.svg": "@parcel/transformer-svg",
+    "*.jpg": "@parcel/transformer-image",
+    "*.png": "@parcel/transformer-image",
+    "bundle-text:*": [
+      "@parcel/transformer-inline-string"
+    ],
+    "data-url:*": [
+      "@parcel/transformer-inline-string"
+    ]
+  },
+  "optimizers": {
+    "data-url:*": [
+      "@parcel/optimizer-data-url"
+    ]
+  }
+}
