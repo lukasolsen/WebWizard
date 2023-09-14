@@ -12,13 +12,13 @@ const Search = () => {
 
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;
     setValue(inputValue);
     updateSuggestions(inputValue);
   };
 
-  const updateSuggestions = (inputValue) => {
+  const updateSuggestions = (inputValue: string) => {
     // Simulate fetching suggestions based on user input
     // In this example, we just update the placeholder text
     const newPlaceholderIndex = inputValue.trim() === "" ? 0 : 1;
@@ -39,7 +39,7 @@ const Search = () => {
   }, []);
 
   return (
-    <Box width={300}>
+    <Box width={"100%"}>
       <TextField
         label="Search"
         InputLabelProps={{
